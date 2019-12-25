@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<!-- saved from url=(0062)http://www.data-visual.net/projects/machsomwatch/abc-3d-3.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>West Bank Map</title>
+
+<link href="./West Bank Map_files/bootstrap.min.css" rel="stylesheet">
+
+<link href="./West Bank Map_files/mapbox-gl.css" rel="stylesheet">
+<link href="./West Bank Map_files/mapbox-gl-geocoder.css" rel="stylesheet">
+
+<link href="./West Bank Map_files/css" rel="stylesheet">
+<style>
+        /* google fonts */
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            font-size: 0.9rem;
+            color: #333;
+            padding: 0;
+            margin: 0;
+        }
+
+        /* google fonts */
+        body,
+        p {
+            font-family: 'Source Sans Pro', sans-serif;
+            font-weight: 400;
+            font-size: 1rem;
+            line-height: 1.4rem;
+            letter-spacing: -0.01rem;
+            color: #333;
+            padding: 0;
+            margin: 0;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Source Sans Pro', sans-serif;
+            font-weight: 700;
+        }
+
+        h1 {
+            letter-spacing: -0.1rem;
+        }
+
+        h5 {
+            font-size: 1.2rem;
+            margin: 0.4rem 0 0.2rem 0;
+        }
+
+        h6 {
+            font-size: 1.1rem;
+            margin: 0.4rem 0 0.2rem 0;
+            color: #444444;
+        }
+
+        p {
+            margin: 0.2rem 0;
+        }
+
+        p.strong {
+            font-size: 0.95rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            line-height: 1.25rem;
+            color: #888;
+        }
+
+        /*  */
+        .margin-top {
+            margin-top: 0.6rem;
+        }
+
+        .show-col {
+            background-color: #eee;
+            height: 200px;
+        }
+
+        .margin-top {
+            margin-top: 1rem;
+        }
+
+        .box {
+            background-color: #e5e7e8;
+            padding: 0.5rem;
+            border-radius: 0.3rem;
+        }
+
+        .icon {
+            margin-right: 0.3rem;
+        }
+
+        /* colors */
+        .fl-gray {
+            background-color: #b7b7b7;
+        }
+
+        .Xbtn-orange {
+            color: #fa4616;
+            background-color: #ffeae0;
+            border-color: #fa4616;
+            margin-top: 0.5rem;
+        }
+
+        .Xbtn-orange:hover {
+            color: #fff;
+            background-color: #b52d09;
+            border-color: #b52d09;
+        }
+
+        .btn-orange {
+            background-color: #da942b;
+            border-color: #da942b;
+            margin-top: 0.2rem;
+        }
+
+        .btn-yellow {
+            background-color: #fadc14;
+            border-color: #fadc14;
+            margin-top: 0.2rem;
+        }
+
+        .btn-blue {
+            background-color: #8abbff;
+            border-color: #8abbff;
+            margin-top: 0.2rem;
+        }
+
+        .btn-gray {
+            background-color: #999;
+            border-color: #999;
+            margin-top: 0.2rem;
+        }
+
+        .white {
+            color: #efefef !important;
+        }
+
+        /* map */
+        #map {
+            height: 600px;
+            border: 1px solid #616569;
+        }
+
+        #map-info {
+            height: 600px;
+            border: 1px solid #616569;
+            padding: 1.4rem 1.9rem 1.7rem;
+            /* color: #fff; */
+            overflow-y: auto;
+        }
+
+        .mapboxgl-popup {
+            max-width: 270px;
+            z-index: 5;
+        }
+
+        .mapboxgl-popup-content {
+            border-radius: 0.3rem;
+            box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.3);
+            padding: 0px 12px 0px 12px;
+        }
+
+        .mapboxgl-popup-tip {
+            border: 8px solid transparent;
+        }
+
+        .header {
+            justify-content: space-between;
+        }
+
+        .close {
+            float: right;
+            font-size: 2.5rem;
+            font-weight: 700;
+            line-height: 1;
+            color: #000;
+            text-shadow: 0 1px 0 #fff;
+            opacity: .5;
+        }
+    </style>
+<link rel="prefetch"></head>
+<body>
+<div class="container-fluid">
+
+<div class="row">
+
+<div class="col-12">
+<h1>West Bank control areas</h1>
+<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero eum asperiores temporibus excepturi
+aspernatur ipsa. Illo aperiam, id cupiditate recusandae aspernatur aliquam, iure cum expedita
+eligendi omnis dolores nihil consectetur.</p>
+</div>
+</div>
+
+<div class="row no-gutters margin-top">
+
+<div class="col-md-9 col-sm-8">
+<div>
+
+<div id="map" class="mapboxgl-map"><div class="mapboxgl-canary" style="visibility: hidden;"></div><div class="mapboxgl-canvas-container mapboxgl-interactive mapboxgl-touch-drag-pan mapboxgl-touch-zoom-rotate"><canvas class="mapboxgl-canvas" tabindex="0" aria-label="Map" width="2472" height="1196" style="position: absolute; width: 1236px; height: 598px;"></canvas></div><div class="mapboxgl-control-container"><div class="mapboxgl-ctrl-top-left"><div class="mapboxgl-ctrl mapboxgl-ctrl-group"><button class="mapboxgl-ctrl-icon mapboxgl-ctrl-zoom-in" type="button" title="Zoom in" aria-label="Zoom in"></button><button class="mapboxgl-ctrl-icon mapboxgl-ctrl-zoom-out" type="button" title="Zoom out" aria-label="Zoom out"></button><button class="mapboxgl-ctrl-icon mapboxgl-ctrl-compass" type="button" title="Reset bearing to north" aria-label="Reset bearing to north"><span class="mapboxgl-ctrl-compass-arrow" style="transform: rotate(0deg);"></span></button></div></div><div class="mapboxgl-ctrl-top-right"><div class="mapboxgl-ctrl-geocoder mapboxgl-ctrl"><span class="geocoder-icon geocoder-icon-search"></span><input type="text" placeholder="Search"><ul class="suggestions" style="display: none;"></ul><div class="geocoder-pin-right"><button class="geocoder-icon geocoder-icon-close" aria-label="Clear"></button><span class="geocoder-icon geocoder-icon-loading"></span></div></div></div><div class="mapboxgl-ctrl-bottom-left"><div class="mapboxgl-ctrl mapboxgl-ctrl-scale" style="width: 61.9628px;">5mi</div><div class="mapboxgl-ctrl" style="display: block;"><a class="mapboxgl-ctrl-logo" target="_blank" href="https://www.mapbox.com/" aria-label="Mapbox logo" rel="noopener"></a></div></div><div class="mapboxgl-ctrl-bottom-right"><div class="mapboxgl-ctrl mapboxgl-ctrl-attrib"><div class="mapboxgl-ctrl-attrib-inner"><a href="https://www.mapbox.com/about/maps/" target="_blank">© Mapbox</a> <a href="http://www.openstreetmap.org/about/" target="_blank">© OpenStreetMap</a> <a class="mapbox-improve-map" href="https://apps.mapbox.com/feedback/?owner=avivakonforty&amp;id=cjvcgebt97op11foewru73dar&amp;access_token=pk.eyJ1IjoiYXZpdmFrb25mb3J0eSIsImEiOiJjajQ0bzFteXgxZnN0MnFybm9nMW44ZGw5In0.Gumo47N2XiNcJAX1ar-Tuw" target="_blank">Improve this map</a></div></div></div></div></div>
+</div>
+</div>
+
+<div class="col-md-3 col-sm-4">
+<div>
+
+<div id="map-info" class="fl-gray">
+<h6 class="white">Select a territory to see isolated areas of Palestine.</h6>
+<button id="btn1" type="button" data-val="A" class="btn btn-primary btn-sm btn-block btn-layer btn-orange">Show Area A</button>
+<button id="btn2" type="button" data-val="B" class="btn btn-primary btn-sm btn-block btn-layer btn-yellow">Show Area B</button>
+<button id="btn3" type="button" data-val="C" class="btn btn-primary btn-sm btn-block btn-layer btn-blue">Show Area C</button>
+<button id="btn4" type="button" data-val="R" class="btn btn-primary btn-sm btn-block btn-layer btn-gray">Reset map view</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<script src="./West Bank Map_files/jquery.min.js"></script>
+<script src="./West Bank Map_files/popper.min.js"></script>
+<script src="./West Bank Map_files/bootstrap.min.js"></script>
+
+<script src="./West Bank Map_files/mapbox-gl.js"></script>
+<script src="./West Bank Map_files/mapbox-gl-geocoder.min.js">
+    </script>
+
+<script>
+        var map;
+        var popup = new mapboxgl.Popup({
+            offset: 12,
+            closeButton: false
+        });
+        var animDuration = 4000;
+        var animDelay = 0;
+
+        var showPopup = function (e) {
+            var props = e.features[0].properties;
+            //
+            var html = '<h6>' + props.name + '</h6>';
+            html += '<p class="strong">' + props.city + ', ' + props.country + '<br>';
+            html += 'Awarded ' + props.awarded + ' over ' + props.years + ' years</p>';
+            //
+            popup.setLngLat(e.lngLat)
+                .setHTML(html)
+                .addTo(map);
+        }
+
+        var showInfo = function (e) {
+            var props = e.features[0].properties;
+            //
+            var html = '<div class="header">';
+            var html = '<h4>' + props.name + '</h4>';
+            // html += '<button type="button" class="close" aria-label="Close"><span aria-hidden="true">×</span></button>';
+            html += '</div>';
+            html += '<p class="strong white">' + props.city + ', ' + props.country + '<br>';
+            if (props.awarded !== undefined) {
+                html += 'Awarded ' + props.awarded + ' over ' + props.years + ' years</p>';
+            } else {
+                html += 'Grantee for ' + props.years + ' years</p>';
+            }
+            html += '<p class="white">' + props.description + '</p>';
+            //
+            $('#map-info').html(html);
+            // highlight selected feature
+            map.setFilter('grantees-hilite', ['in', 'name', e.features[0].properties.name]);
+        }
+
+        var easeTo = function (e) {
+            map.easeTo({
+                center: [
+                    e.lon,
+                    e.lat
+                ],
+                zoom: e.zoom,
+                bearing: e.bearing,
+                pitch: e.pitch,
+                speed: 1.1,
+                curve: 1.7,
+                duration: 3600
+            });
+        }
+
+        mapboxgl.accessToken =
+            'pk.eyJ1IjoiYXZpdmFrb25mb3J0eSIsImEiOiJjajQ0bzFteXgxZnN0MnFybm9nMW44ZGw5In0.Gumo47N2XiNcJAX1ar-Tuw';
+
+        map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/avivakonforty/cjvcgebt97op11foewru73dar',
+            center: [35.2, 31.9],
+            zoom: 8.0,
+            bearing: 0,
+            pitch: 0,
+            //hash: true
+        });
+
+        map.on('load', function () {
+            map.addControl(new mapboxgl.NavigationControl(), 'top-left');
+            map.addControl(new MapboxGeocoder({
+                accessToken: mapboxgl.accessToken,
+                countries: 'il, ps'
+            }));
+            map.addControl(new mapboxgl.ScaleControl({
+                maxWidth: 80,
+                unit: 'imperial'
+            }));
+            //
+            map.setPaintProperty('A-3D', 'fill-extrusion-height-transition', {
+                duration: animDuration,
+                delay: animDelay
+            });
+            map.setPaintProperty('B-3D', 'fill-extrusion-height-transition', {
+                duration: animDuration,
+                delay: animDelay
+            });
+            map.setPaintProperty('C-3D', 'fill-extrusion-height-transition', {
+                duration: animDuration,
+                delay: animDelay
+            });
+        });
+
+        var toggleLayer = function (val) {
+            // var layer = val + '-3D';
+            // var vis = map.getLayoutProperty(layer, 'visibility');
+            // if (vis === 'visible') {
+            //     map.setLayoutProperty(layer, 'visibility', 'none');
+            // } else {
+            //     map.setLayoutProperty(layer, 'visibility', 'visible');
+            // }
+
+            var ht = [0, 0, 0];
+            var ft = {
+                lat: 32.1,
+                lon: 35.2,
+                zoom: 10,
+                bearing: -30,
+                pitch: 60,
+                speed: 1.1,
+                curve: 1.7,
+                duration: 3600
+            };
+            if (val == 'A') { // 9.17/31.7348/35.1491/-18.4/56
+                ht[0] = 1600;
+                ft.lat = 31.73;
+                ft.lon = 35.15;
+                ft.zoom = 9.17;
+                ft.bearing = -18.4;
+                ft.pitch = 56;
+            }
+            if (val == 'B') { // 9.74/31.6119/35.0244/33.3/60
+                ht[0] = 1600;
+                ht[1] = 800;
+                ft.lat = 31.61;
+                ft.lon = 35.02;
+                ft.zoom = 9.7;
+                ft.bearing = 33.3;
+                ft.pitch = 60;
+            }
+            if (val == 'C') { // 9.01/31.7407/35.1804/0/53
+                ht[2] = 1200;
+                ft.lat = 31.74;
+                ft.lon = 35.18;
+                ft.zoom = 9.0;
+                ft.bearing = 0;
+                ft.pitch = 53;
+            }
+            if (val == 'R') {
+                ht = [0, 0, 0];
+                ft.lat = 31.9;
+                ft.lon = 35.2;
+                ft.zoom = 8.0;
+                ft.bearing = 0;
+                ft.pitch = 0;
+            }
+            //
+            map.setPaintProperty('A-3D', 'fill-extrusion-height', ht[0]);
+            map.setPaintProperty('B-3D', 'fill-extrusion-height', ht[1]);
+            map.setPaintProperty('C-3D', 'fill-extrusion-height', ht[2]);
+            //
+            easeTo(ft);
+        };
+
+        $('.btn-layer').on('click', function (e) {
+            // console.log(e);
+            var val = e.target.dataset.val;
+            toggleLayer(val);
+        });
+    </script>
+
+</body></html>
