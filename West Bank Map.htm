@@ -143,12 +143,12 @@
 
         /* map */
         #map {
-            height: 600px;
+            height: 90vh;
             border: 1px solid #616569;
         }
 
         #map-info {
-            height: 600px;
+            height: 90vh;
             border: 1px solid #616569;
             padding: 1.4rem 1.9rem 1.7rem;
             /* color: #fff; */
@@ -183,6 +183,20 @@
             text-shadow: 0 1px 0 #fff;
             opacity: .5;
         }
+
+        .select-territory {
+            position: absolute;
+            top: 4em;
+            right: 10px;
+            z-index: 1;
+            top: 4em;
+        }
+
+        .select-territory .dropdown-menu {
+            padding: 0.5em;
+        }
+
+
     </style>
 <link rel="prefetch"></head>
 <body>
@@ -190,33 +204,35 @@
 
 <div class="row">
 
-<div class="col-12">
-<h1>West Bank control areas</h1>
-<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero eum asperiores temporibus excepturi
-aspernatur ipsa. Illo aperiam, id cupiditate recusandae aspernatur aliquam, iure cum expedita
-eligendi omnis dolores nihil consectetur.</p>
-</div>
+    <div class="col-12">
+        <h2>Control areas in the West Bank Following the Oslo agreement</h2>
+    </div>
 </div>
 
 <div class="row no-gutters margin-top">
 
-<div class="col-md-9 col-sm-8">
+<div class="col-sm-12">
 <div>
 
-<div id="map" class="mapboxgl-map"><div class="mapboxgl-canary" style="visibility: hidden;"></div><div class="mapboxgl-canvas-container mapboxgl-interactive mapboxgl-touch-drag-pan mapboxgl-touch-zoom-rotate"><canvas class="mapboxgl-canvas" tabindex="0" aria-label="Map" width="2472" height="1196" style="position: absolute; width: 1236px; height: 598px;"></canvas></div><div class="mapboxgl-control-container"><div class="mapboxgl-ctrl-top-left"><div class="mapboxgl-ctrl mapboxgl-ctrl-group"><button class="mapboxgl-ctrl-icon mapboxgl-ctrl-zoom-in" type="button" title="Zoom in" aria-label="Zoom in"></button><button class="mapboxgl-ctrl-icon mapboxgl-ctrl-zoom-out" type="button" title="Zoom out" aria-label="Zoom out"></button><button class="mapboxgl-ctrl-icon mapboxgl-ctrl-compass" type="button" title="Reset bearing to north" aria-label="Reset bearing to north"><span class="mapboxgl-ctrl-compass-arrow" style="transform: rotate(0deg);"></span></button></div></div><div class="mapboxgl-ctrl-top-right"><div class="mapboxgl-ctrl-geocoder mapboxgl-ctrl"><span class="geocoder-icon geocoder-icon-search"></span><input type="text" placeholder="Search"><ul class="suggestions" style="display: none;"></ul><div class="geocoder-pin-right"><button class="geocoder-icon geocoder-icon-close" aria-label="Clear"></button><span class="geocoder-icon geocoder-icon-loading"></span></div></div></div><div class="mapboxgl-ctrl-bottom-left"><div class="mapboxgl-ctrl mapboxgl-ctrl-scale" style="width: 61.9628px;">5mi</div><div class="mapboxgl-ctrl" style="display: block;"><a class="mapboxgl-ctrl-logo" target="_blank" href="https://www.mapbox.com/" aria-label="Mapbox logo" rel="noopener"></a></div></div><div class="mapboxgl-ctrl-bottom-right"><div class="mapboxgl-ctrl mapboxgl-ctrl-attrib"><div class="mapboxgl-ctrl-attrib-inner"><a href="https://www.mapbox.com/about/maps/" target="_blank">© Mapbox</a> <a href="http://www.openstreetmap.org/about/" target="_blank">© OpenStreetMap</a> <a class="mapbox-improve-map" href="https://apps.mapbox.com/feedback/?owner=avivakonforty&amp;id=cjvcgebt97op11foewru73dar&amp;access_token=pk.eyJ1IjoiYXZpdmFrb25mb3J0eSIsImEiOiJjajQ0bzFteXgxZnN0MnFybm9nMW44ZGw5In0.Gumo47N2XiNcJAX1ar-Tuw" target="_blank">Improve this map</a></div></div></div></div></div>
+<div class="select-territory dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Select a territory
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <button id="btn1" type="button" data-val="A" class="btn btn-primary btn-sm btn-block btn-layer btn-orange">Show Area A</button>
+        <button id="btn2" type="button" data-val="B" class="btn btn-primary btn-sm btn-block btn-layer btn-yellow">Show Area B</button>
+        <button id="btn3" type="button" data-val="C" class="btn btn-primary btn-sm btn-block btn-layer btn-blue">Show Area C</button>
+        <button id="btn4" type="button" data-val="R" class="btn btn-primary btn-sm btn-block btn-layer btn-gray">Reset map view</button>
+    </div>
+</div>
+
+<div id="map" class="mapboxgl-map"><div class="mapboxgl-canary" style="visibility: hidden;"></div><div class="mapboxgl-canvas-container mapboxgl-interactive mapboxgl-touch-drag-pan mapboxgl-touch-zoom-rotate"><canvas class="mapboxgl-canvas" tabindex="0" aria-label="Map" width="2472" height="1196" style="position: absolute; width: 1236px; height: 598px;"></canvas></div><div class="mapboxgl-control-container"><div class="mapboxgl-ctrl-top-left"><div class="mapboxgl-ctrl mapboxgl-ctrl-group"><button class="mapboxgl-ctrl-icon mapboxgl-ctrl-zoom-in" type="button" title="Zoom in" aria-label="Zoom in"></button><button class="mapboxgl-ctrl-icon mapboxgl-ctrl-zoom-out" type="button" title="Zoom out" aria-label="Zoom out"></button><button class="mapboxgl-ctrl-icon mapboxgl-ctrl-compass" type="button" title="Reset bearing to north" aria-label="Reset bearing to north"><span class="mapboxgl-ctrl-compass-arrow" style="transform: rotate(0deg);"></span></button></div></div><div class="mapboxgl-ctrl-top-right"><div class="mapboxgl-ctrl-geocoder mapboxgl-ctrl"><span class="geocoder-icon geocoder-icon-search"></span><input type="text" placeholder="Search"><ul class="suggestions" style="display: none;"></ul><div class="geocoder-pin-right"><button class="geocoder-icon geocoder-icon-close" aria-label="Clear"></button><span class="geocoder-icon geocoder-icon-loading"></span></div></div></div><div class="mapboxgl-ctrl-bottom-left"><div class="mapboxgl-ctrl mapboxgl-ctrl-scale" style="width: 61.9628px;">5mi</div><div class="mapboxgl-ctrl" style="display: block;"><a class="mapboxgl-ctrl-logo" target="_blank" href="https://www.mapbox.com/" aria-label="Mapbox logo" rel="noopener"></a></div></div><div class="mapboxgl-ctrl-bottom-right"><div class="mapboxgl-ctrl mapboxgl-ctrl-attrib"><div class="mapboxgl-ctrl-attrib-inner"><a href="https://www.mapbox.com/about/maps/" target="_blank">© Mapbox</a> <a href="http://www.openstreetmap.org/about/" target="_blank">© OpenStreetMap</a> <a class="mapbox-improve-map" href="https://apps.mapbox.com/feedback/?owner=avivakonforty&amp;id=ck4t29vgt29hc1cpkkgvpflwn&amp;access_token=pk.eyJ1IjoiYXZpdmFrb25mb3J0eSIsImEiOiJjajQ0bzFteXgxZnN0MnFybm9nMW44ZGw5In0.Gumo47N2XiNcJAX1ar-Tuw" target="_blank">Improve this map</a></div></div></div></div></div>
 </div>
 </div>
 
 <div class="col-md-3 col-sm-4">
 <div>
 
-<div id="map-info" class="fl-gray">
-<h6 class="white">Select a territory to see isolated areas of Palestine.</h6>
-<button id="btn1" type="button" data-val="A" class="btn btn-primary btn-sm btn-block btn-layer btn-orange">Show Area A</button>
-<button id="btn2" type="button" data-val="B" class="btn btn-primary btn-sm btn-block btn-layer btn-yellow">Show Area B</button>
-<button id="btn3" type="button" data-val="C" class="btn btn-primary btn-sm btn-block btn-layer btn-blue">Show Area C</button>
-<button id="btn4" type="button" data-val="R" class="btn btn-primary btn-sm btn-block btn-layer btn-gray">Reset map view</button>
-</div>
 </div>
 </div>
 </div>
@@ -291,7 +307,7 @@ eligendi omnis dolores nihil consectetur.</p>
 
         map = new mapboxgl.Map({
             container: 'map',
-            style: 'mapbox://styles/avivakonforty/cjvcgebt97op11foewru73dar',
+            style: 'mapbox://styles/avivakonforty/ck4t29vgt29hc1cpkkgvpflwn',
             center: [35.2, 31.9],
             zoom: 8.0,
             bearing: 0,
