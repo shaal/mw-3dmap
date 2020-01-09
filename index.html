@@ -222,11 +222,12 @@
         <button id="btn1" type="button" data-val="A" class="btn btn-primary btn-sm btn-block btn-layer btn-orange">Show Area A</button>
         <button id="btn2" type="button" data-val="B" class="btn btn-primary btn-sm btn-block btn-layer btn-yellow">Show Area B</button>
         <button id="btn3" type="button" data-val="C" class="btn btn-primary btn-sm btn-block btn-layer btn-blue">Show Area C</button>
+        <button id="btn3" type="button" data-val="seam" class="btn btn-primary btn-sm btn-block btn-layer btn-blue">Show Seam</button>
         <button id="btn4" type="button" data-val="R" class="btn btn-primary btn-sm btn-block btn-layer btn-gray">Reset map view</button>
     </div>
 </div>
 
-<div id="map" class="mapboxgl-map"><div class="mapboxgl-canary" style="visibility: hidden;"></div><div class="mapboxgl-canvas-container mapboxgl-interactive mapboxgl-touch-drag-pan mapboxgl-touch-zoom-rotate"><canvas class="mapboxgl-canvas" tabindex="0" aria-label="Map" width="2472" height="1196" style="position: absolute; width: 1236px; height: 598px;"></canvas></div><div class="mapboxgl-control-container"><div class="mapboxgl-ctrl-top-left"><div class="mapboxgl-ctrl mapboxgl-ctrl-group"><button class="mapboxgl-ctrl-icon mapboxgl-ctrl-zoom-in" type="button" title="Zoom in" aria-label="Zoom in"></button><button class="mapboxgl-ctrl-icon mapboxgl-ctrl-zoom-out" type="button" title="Zoom out" aria-label="Zoom out"></button><button class="mapboxgl-ctrl-icon mapboxgl-ctrl-compass" type="button" title="Reset bearing to north" aria-label="Reset bearing to north"><span class="mapboxgl-ctrl-compass-arrow" style="transform: rotate(0deg);"></span></button></div></div><div class="mapboxgl-ctrl-top-right"><div class="mapboxgl-ctrl-geocoder mapboxgl-ctrl"><span class="geocoder-icon geocoder-icon-search"></span><input type="text" placeholder="Search"><ul class="suggestions" style="display: none;"></ul><div class="geocoder-pin-right"><button class="geocoder-icon geocoder-icon-close" aria-label="Clear"></button><span class="geocoder-icon geocoder-icon-loading"></span></div></div></div><div class="mapboxgl-ctrl-bottom-left"><div class="mapboxgl-ctrl mapboxgl-ctrl-scale" style="width: 61.9628px;">5mi</div><div class="mapboxgl-ctrl" style="display: block;"><a class="mapboxgl-ctrl-logo" target="_blank" href="https://www.mapbox.com/" aria-label="Mapbox logo" rel="noopener"></a></div></div><div class="mapboxgl-ctrl-bottom-right"><div class="mapboxgl-ctrl mapboxgl-ctrl-attrib"><div class="mapboxgl-ctrl-attrib-inner"><a href="https://www.mapbox.com/about/maps/" target="_blank">© Mapbox</a> <a href="http://www.openstreetmap.org/about/" target="_blank">© OpenStreetMap</a> <a class="mapbox-improve-map" href="https://apps.mapbox.com/feedback/?owner=avivakonforty&amp;id=ck55f2fj10vwu1crvaegrzt5z&amp;access_token=pk.eyJ1IjoiYXZpdmFrb25mb3J0eSIsImEiOiJjajQ0bzFteXgxZnN0MnFybm9nMW44ZGw5In0.Gumo47N2XiNcJAX1ar-Tuw" target="_blank">Improve this map</a></div></div></div></div></div>
+<div id="map" class="mapboxgl-map"><div class="mapboxgl-canary" style="visibility: hidden;"></div><div class="mapboxgl-canvas-container mapboxgl-interactive mapboxgl-touch-drag-pan mapboxgl-touch-zoom-rotate"><canvas class="mapboxgl-canvas" tabindex="0" aria-label="Map" width="2472" height="1196" style="position: absolute; width: 1236px; height: 598px;"></canvas></div><div class="mapboxgl-control-container"><div class="mapboxgl-ctrl-top-left"><div class="mapboxgl-ctrl mapboxgl-ctrl-group"><button class="mapboxgl-ctrl-icon mapboxgl-ctrl-zoom-in" type="button" title="Zoom in" aria-label="Zoom in"></button><button class="mapboxgl-ctrl-icon mapboxgl-ctrl-zoom-out" type="button" title="Zoom out" aria-label="Zoom out"></button><button class="mapboxgl-ctrl-icon mapboxgl-ctrl-compass" type="button" title="Reset bearing to north" aria-label="Reset bearing to north"><span class="mapboxgl-ctrl-compass-arrow" style="transform: rotate(0deg);"></span></button></div></div><div class="mapboxgl-ctrl-top-right"><div class="mapboxgl-ctrl-geocoder mapboxgl-ctrl"><span class="geocoder-icon geocoder-icon-search"></span><input type="text" placeholder="Search"><ul class="suggestions" style="display: none;"></ul><div class="geocoder-pin-right"><button class="geocoder-icon geocoder-icon-close" aria-label="Clear"></button><span class="geocoder-icon geocoder-icon-loading"></span></div></div></div><div class="mapboxgl-ctrl-bottom-left"><div class="mapboxgl-ctrl mapboxgl-ctrl-scale" style="width: 61.9628px;">5mi</div><div class="mapboxgl-ctrl" style="display: block;"><a class="mapboxgl-ctrl-logo" target="_blank" href="https://www.mapbox.com/" aria-label="Mapbox logo" rel="noopener"></a></div></div><div class="mapboxgl-ctrl-bottom-right"><div class="mapboxgl-ctrl mapboxgl-ctrl-attrib"><div class="mapboxgl-ctrl-attrib-inner"><a href="https://www.mapbox.com/about/maps/" target="_blank">© Mapbox</a> <a href="http://www.openstreetmap.org/about/" target="_blank">© OpenStreetMap</a> <a class="mapbox-improve-map" href="https://apps.mapbox.com/feedback/?owner=avivakonforty&amp;id=ck56ttmxd0zrm1cqj6hwyc4ba&amp;access_token=pk.eyJ1IjoiYXZpdmFrb25mb3J0eSIsImEiOiJjajQ0bzFteXgxZnN0MnFybm9nMW44ZGw5In0.Gumo47N2XiNcJAX1ar-Tuw" target="_blank">Improve this map</a></div></div></div></div></div>
 </div>
 </div>
 
@@ -307,7 +308,7 @@
 
         map = new mapboxgl.Map({
             container: 'map',
-            style: 'mapbox://styles/avivakonforty/ck55f2fj10vwu1crvaegrzt5z',
+            style: 'mapbox://styles/avivakonforty/ck56ttmxd0zrm1cqj6hwyc4ba',
             center: [35.2, 31.9],
             zoom: 8.0,
             bearing: 0,
@@ -338,6 +339,10 @@
                 duration: animDuration,
                 delay: animDelay
             });
+            map.setPaintProperty('seam-3D', 'fill-extrusion-height-transition', {
+                duration: animDuration,
+                delay: animDelay
+            });
         });
 
         var toggleLayer = function (val) {
@@ -349,8 +354,8 @@
             //     map.setLayoutProperty(layer, 'visibility', 'visible');
             // }
 
-            var ht = [0, 0, 0];
-            var fill_opacity = [0.7, 0.7, 0.7];
+            var ht = [0, 0, 0, 0];
+            var fill_opacity = [0.7, 0.7, 0.7, 0.7];
             var ft = {
                 lat: 32.1,
                 lon: 35.2,
@@ -389,9 +394,18 @@
                 ft.bearing = 0;
                 ft.pitch = 53;
             }
+            if (val == 'seam') { // 9.01/31.7407/35.1804/0/53
+                ht[3] = 1200;
+                fill_opacity[3] = 1;
+                ft.lat = 31.74;
+                ft.lon = 35.18;
+                ft.zoom = 9.0;
+                ft.bearing = 0;
+                ft.pitch = 53;
+            }
             if (val == 'R') {
-                ht = [0, 0, 0];
-                fill_opacity = [0.7, 0.7, 0.7];
+                ht = [0, 0, 0, 0];
+                fill_opacity = [0.7, 0.7, 0.7, 0.7];
                 ft.lat = 31.9;
                 ft.lon = 35.2;
                 ft.zoom = 8.0;
@@ -407,6 +421,9 @@
 
             map.setPaintProperty('C-3D', 'fill-extrusion-height', ht[2]);
             map.setPaintProperty('C-3D', 'fill-extrusion-opacity', fill_opacity[2]);
+
+            map.setPaintProperty('seam-3D', 'fill-extrusion-height', ht[3]);
+            map.setPaintProperty('seam-3D', 'fill-extrusion-opacity', fill_opacity[3]);
             //
             easeTo(ft);
         };
