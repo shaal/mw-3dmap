@@ -219,9 +219,9 @@
         Select a territory
     </button>
     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <button id="btn1" type="button" data-val="A" class="btn btn-primary btn-sm btn-block btn-layer btn-orange">Show Area A</button>
-        <button id="btn2" type="button" data-val="B" class="btn btn-primary btn-sm btn-block btn-layer btn-yellow">Show Area B</button>
-        <button id="btn3" type="button" data-val="C" class="btn btn-primary btn-sm btn-block btn-layer btn-blue">Show Area C</button>
+        <button id="btn1" type="button" data-val="A" class="btn btn-primary btn-sm btn-block btn-layer btn-orange">Area A (18% of WB)</button>
+        <button id="btn2" type="button" data-val="B" class="btn btn-primary btn-sm btn-block btn-layer btn-yellow">Area B (22% of WB)</button>
+        <button id="btn3" type="button" data-val="C" class="btn btn-primary btn-sm btn-block btn-layer btn-blue">Area C (60% of WB)</button>
         <button id="btn3" type="button" data-val="seam" class="btn btn-primary btn-sm btn-block btn-layer btn-blue">Show Seam</button>
         <button id="btn4" type="button" data-val="R" class="btn btn-primary btn-sm btn-block btn-layer btn-gray">Reset map view</button>
     </div>
@@ -354,7 +354,7 @@
             //     map.setLayoutProperty(layer, 'visibility', 'visible');
             // }
 
-            var ht = [0, 0, 0, 0];
+            var ht = [0, 0, 0, 10];
             var fill_opacity = [0.7, 0.7, 0.7, 0.7];
             var ft = {
                 lat: 32.1,
@@ -406,7 +406,7 @@
                 ft.pitch = 53;
             }
             if (val == 'R') {
-                ht = [0, 0, 0, 0];
+                ht = [0, 0, 0, 10];
                 fill_opacity = [0.7, 0.7, 0.7, 0.7];
                 ft.lat = 31.9;
                 ft.lon = 35.2;
